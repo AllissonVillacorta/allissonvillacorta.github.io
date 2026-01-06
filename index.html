@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MUMMA GROUP | Consultora de Marketing Digital en Perú</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #FFFFFF;
+      --color-bg-light: #F9F6F0;
+      --color-accent: #C48A5D;
+      --color-text: #2D2D2D;
+      --color-text-light: #6B6B6B;
+      --color-border: #E9E5DD;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      padding: 24px 0;
+      position: fixed;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.95);
+      z-index: 1000;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      background-color: var(--color-bg-light);
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1553877522-432631efd28d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      opacity: 0.12;
+      z-index: -1;
+    }
+
+    .hero-content {
+      max-width: 650px;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    .hero h1 {
+      font-weight: 500;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: var(--color-text);
+    }
+
+    .hero p {
+      font-weight: 300;
+      font-size: 1.15rem;
+      color: var(--color-text-light);
+      margin-bottom: 25px;
+    }
+
+    /* Sección: Sobre Nosotros */
+    .about {
+      padding: 100px 0;
+      background-color: var(--color-bg);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-image {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .about-content h2 {
+      font-weight: 500;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      margin-bottom: 15px;
+      color: var(--color-text-light);
+    }
+
+    /* Servicios con imágenes */
+    .services {
+      padding: 100px 0;
+      background-color: var(--color-bg-light);
+    }
+
+    .section-title {
+      text-align: center;
+      font-weight: 500;
+      font-size: 2.2rem;
+      margin-bottom: 60px;
+      color: var(--color-text);
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .service-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover .service-image img {
+      transform: scale(1.05);
+    }
+
+    .service-text {
+      padding: 25px;
+    }
+
+    .service-text h3 {
+      font-weight: 500;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--color-text);
+    }
+
+    .service-text p {
+      color: var(--color-text-light);
+      font-weight: 300;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    /* Testimonios */
+    .testimonials {
+      padding: 100px 0;
+      background-color: var(--color-bg);
+    }
+
+    .testimonial-card {
+      background: var(--color-bg-light);
+      padding: 30px;
+      border-radius: 12px;
+      margin: 0 auto;
+      max-width: 700px;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: var(--color-text);
+    }
+
+    .testimonial-author {
+      font-weight: 500;
+      color: var(--color-accent);
+    }
+
+    /* Contacto */
+    .contact {
+      padding: 100px 0;
+      background-color: var(--color-bg-light);
+      text-align: center;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      background-color: var(--color-accent);
+      color: white;
+      padding: 12px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 15px;
+      transition: background 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      background-color: #a8734d;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0 20px;
+      background-color: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+      color: var(--color-text-light);
+    }
+
+    .footer-contact {
+      margin: 15px 0;
+      font-weight: 500;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .section-title { font-size: 1.8rem; }
+      .hero-content { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-content">
+      <a href="#" class="logo">MUMMA GROUP</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Estrategia Digital con Impacto en Perú</h1>
+      <p>Consultora peruana especializada en marketing digital, representación de talento deportivo y alianzas estratégicas.</p>
+      <a href="#contacto" class="contact-btn">Contáctanos</a>
+    </div>
+  </section>
+
+  <!-- Sobre Nosotros -->
+  <section class="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Equipo MUMMA GROUP en reunión estratégica">
+        </div>
+        <div class="about-content">
+          <h2>Quiénes Somos</h2>
+          <p>En MUMMA GROUP combinamos la creatividad limeña con la disciplina del marketing global. Fundada en Lima, trabajamos con marcas locales e internacionales que buscan crecer con autenticidad.</p>
+          <p>Nuestro enfoque: **resultados reales, relaciones humanas y estrategia a la medida**.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section class="services">
+    <div class="container">
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Marketing en redes sociales">
+          </div>
+          <div class="service-text">
+            <h3>Marketing & Asesoría en Social Media</h3>
+            <p>Estrategias 360° para Instagram, TikTok, LinkedIn y más. Construimos comunidades, no solo seguidores.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1546539870-9c4bd798e12c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Representación de futbolistas">
+          </div>
+          <div class="service-text">
+            <h3>Representación de Futbolistas</h3>
+            <p>Gestión de carrera, imagen personal, contratos y activaciones comerciales para talento deportivo peruano.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1551817958-d9d7118c3d52?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Patrocinio y alianzas">
+          </div>
+          <div class="service-text">
+            <h3>Patrocinio & Alianzas</h3>
+            <p>Conectamos marcas con influencers, deportistas y eventos para campañas con propósito y métricas claras.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <div class="testimonial-card">
+        <p class="testimonial-text">“MUMMA GROUP transformó nuestra presencia digital. Pasamos de 2K a 50K seguidores en 4 meses, con engagement real.”</p>
+        <p class="testimonial-author">— Carla Méndez, Fundadora de Andina Cosméticos (Lima)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="contact" id="contacto">
+    <div class="container">
+      <h2 class="section-title">¿Trabajamos juntos?</h2>
+      <p>Estamos en Lima, pero trabajamos en todo el Perú y Latinoamérica.</p>
+      <p class="footer-contact">📧 hola@mummagroup.com.pe | 📱 +51 999 888 777</p>
+      <a href="https://wa.me/51999888777" class="contact-btn" target="_blank">Escríbenos por WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 MUMMA GROUP. Consultora de Marketing Digital en Perú.</p>
+      <p>Lima, Perú</p>
+    </div>
+  </footer>
+
+</body>
+</html>
